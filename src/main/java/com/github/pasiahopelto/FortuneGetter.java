@@ -1,13 +1,26 @@
 package com.github.pasiahopelto;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
 
-@Component
 @RequiredArgsConstructor
+@Component
 public class FortuneGetter {
+	private static final String[] FORTUNE_CMD = new String[] { "/opt/homebrew/bin/fortune" };
+	
 	public String getFortune() {
-		return null;
+		String result = null;
+		try (InputStream inputStream = Runtime.getRuntime().exec(FORTUNE_CMD).getInputStream();
+				Scanner s = new Scanner(inputStream).useDelimiter("\\A")) {
+			result = s.hasNext() ? s.next() : null;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
