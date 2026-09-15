@@ -7,3 +7,7 @@ Gets a fortune with fortune and gives it to a local LLM for analysis. Shows eith
 # Compile
 
 mvn clean package
+
+# Run
+
+java -jar target/explain-fortune-<VERSION>.jar
