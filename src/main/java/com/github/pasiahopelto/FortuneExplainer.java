@@ -1,5 +1,13 @@
 package com.github.pasiahopelto;
 
-public class FortuneExplainer {
+import org.springframework.stereotype.Component;
 
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class FortuneExplainer {
+	public String explain(String fortune) {
+		return null;
+	}
 }

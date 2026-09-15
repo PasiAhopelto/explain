@@ -1,5 +1,13 @@
 package com.github.pasiahopelto;
 
-public class FortuneGetter {
+import org.springframework.stereotype.Component;
 
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class FortuneGetter {
+	public String getFortune() {
+		return null;
+	}
 }
