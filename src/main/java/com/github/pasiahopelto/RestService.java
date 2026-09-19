@@ -1,25 +1,29 @@
 package com.github.pasiahopelto;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
 import lombok.RequiredArgsConstructor;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
-@RequestMapping("/api")
 public class RestService {
 	private final FortuneGetter getter;
 	private final FortuneExplainer explainer;
+
+	@GetMapping("/fortune")
+    public String page() {
+        return "view";
+    }
 	
-	@GetMapping("/get-and-explain")
-	public Explanation getAndEplainFortune() {
-		Explanation result = new Explanation();
+	@HxRequest
+	@GetMapping("/fortune/random")
+	public String getAndEplainFortune(Model model) {
 		String fortune = getter.getFortune();
-		String explanation = explainer.explain(fortune);
-		result.setExplanation(explanation);
-		result.setFortune(fortune);
-		return result;
+		model.addAttribute("fortune", fortune);
+		model.addAttribute("explanation", explainer.explain(fortune));
+		return "view :: fortune";
 	}
 }
