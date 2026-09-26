@@ -21,6 +21,10 @@ java -jar target/explain-fortune-<VERSION>.jar
 
 Open http://localhost:8080/fortune
 
+# AI statement
+
+Self-written code with some advice from AI.
+
 # TODO
 
 - code cleanup
