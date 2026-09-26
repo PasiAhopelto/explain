@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class RestService {
+public class WebUi {
 	private final FortuneGetter getter;
 	private final FortuneExplainer explainer;
 
