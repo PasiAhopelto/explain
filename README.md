@@ -32,7 +32,6 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- convert explanation from md to html
 - show fortune and progress indicator while waiting for explanation
 - tell user about error
 - make UI better looking
