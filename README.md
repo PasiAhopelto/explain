@@ -33,9 +33,12 @@ This is self-written code with some advice from AI.
 # TODO
 
 - disable button while getting fortune and explanation
+- logging
 - convert ollama use to builder
 - make UI better looking
 - tell user about error
+- generate image of the fortune
+- show the image to user
 - check whether md to html can be used for fortunes
 - allow limited prompt modification, eg select style from drowdown
 - prevent repeated requests, eg allow single active request from a source with cooldown period
