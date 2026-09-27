@@ -32,11 +32,11 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- make UI better looking
-- tell user about error
 - show fortune and progress indicator while waiting for explanation
-	- generate with thinking
-	- streaming / async
+	- convert to builder
+	- convert to async
 	- show thinking's intermediate responses while answer is being generated
 	- replace thinking with explanation once final response is available
+- tell user about error
+- make UI better looking
 - unit tests
