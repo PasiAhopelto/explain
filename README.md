@@ -32,11 +32,12 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- show fortune and progress indicator while waiting for explanation
-	- convert to builder
-	- convert to async
-	- show thinking's intermediate responses while answer is being generated
-	- replace thinking with explanation once final response is available
-- tell user about error
+- disable button while getting fortune and explanation
+- convert ollama use to builder
 - make UI better looking
+- tell user about error
+- check whether md to html can be used for fortunes
+- allow limited prompt modification, eg select style from drowdown
+- prevent repeated requests, eg allow single active request from a source with cooldown period
+- check can ollama client use limits how many requests it will process at a time
 - unit tests

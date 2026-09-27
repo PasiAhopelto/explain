@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <title>Fortune</title>
     <script src="/js/htmx.min.js"></script>
+    <script src="/js/hx-sse.min.js"></script>
 </head>
+
 <body>
 
-<h1>Fortune teller</h1>
+	<button
+	    hx-get="/fortune"
+	    hx-target="#fortune"
+	    hx-swap="innerHTML">
+	    Generate fortune
+	</button>
 
-<div id="fortune">
-    <p>Click the button.</p>
-</div>
-
-<button
-    hx-get="/fortune/random"
-    hx-target="#fortune"
-    hx-swap="innerHTML">
-    Get fortune
-</button>
-
-<div th:fragment="fortune">
-    <h2 th:text="${fortune}"></h2>
-    <p th:utext="${explanation}"></p>
-</div>
-
+	<div id="fortune"></div>
+	
 </body>
 </html>
