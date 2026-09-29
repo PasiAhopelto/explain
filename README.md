@@ -32,7 +32,6 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- disable button while getting fortune and explanation
 - logging
 - convert ollama use to builder
 - make UI better looking
