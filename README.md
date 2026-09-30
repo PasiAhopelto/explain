@@ -32,7 +32,6 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- logging
 - convert ollama use to builder
 - make UI better looking
 - tell user about error

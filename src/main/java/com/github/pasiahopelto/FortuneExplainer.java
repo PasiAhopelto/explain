@@ -26,9 +26,6 @@ public class FortuneExplainer {
 	
 	private final SpringTemplateEngine templateEngine;
 
-	/*
-	*/
-	
 	public void explainAndSend(SseEmitter emitter, String fortune) {
         try {
         	String prompt = "Please explain this fortune: " + fortune;
