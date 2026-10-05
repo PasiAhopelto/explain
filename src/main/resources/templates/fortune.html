@@ -1,8 +1,8 @@
 <div>
-	<h2>Fortune</h2>
-	<p th:utext="${fortune}"></p>
-	<h2>Explanation</h2>
-	<p th:utext="${explanation}"></p>
-	<h2>Thought process</h2>
-	<p th:utext="${thought}"></p>
+	<h2 class="title">Fortune</h2>
+	<div class="base-text fortune" th:utext="${fortune}"></div>
+	<h2 class="title">Explanation</h2>
+	<div class="base-text explanation" th:utext="${explanation}"></div>
+	<h2 class="title">Thought process</h2>
+	<div class="base-text thinking" th:utext="${thought}"></div>
 </div>

@@ -32,7 +32,10 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- make UI better looking
+- rethink button placement and visibility:
+	- autoload first fortune
+	- enable button after it's visible
+	- maybe place the button under fortune section
 - tell user about error
 - generate image of the fortune
 - show the image to user
