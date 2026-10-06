@@ -5,18 +5,12 @@
     <script src="/js/htmx.min.js"></script>
     <script src="/js/hx-sse.min.js"></script>
 </head>
-
 <body>
-
-	<button
-	    hx-get="/fortune"
-	    hx-target="#fortune"
-	    hx-swap="innerHTML"
-	    hx-disable="this">
-	    Generate fortune
-	</button>
-
-	<div id="fortune"></div>
-	
+	<div 
+		id="fortune"
+		hx-get="/fortune"
+		hx-trigger="load"
+		hx-swap="innerHTML">
+	</div>
 </body>
 </html>

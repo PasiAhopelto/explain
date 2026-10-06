@@ -32,10 +32,8 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- rethink button placement and visibility:
-	- autoload first fortune
-	- enable button after it's visible
-	- maybe place the button under fortune section
+- add button for loading new fortune
+- disable or hide the button during load
 - tell user about error
 - generate image of the fortune
 - show the image to user

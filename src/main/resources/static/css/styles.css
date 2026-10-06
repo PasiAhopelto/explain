@@ -12,7 +12,8 @@
 	font-weight: 400;
 	line-height: 1.65;
 	color: #687780;
-	margin: 0 0 1rem;}
+	margin: 0 0 1rem;
+}
 
 .fortune {
 }
@@ -21,4 +22,8 @@
 }
 
 .thinking {
+}
+
+.link {
+	text-decoration: none;
 }
