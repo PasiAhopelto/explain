@@ -32,11 +32,13 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- add button for loading new fortune
-- disable or hide the button during load
+- imporove link's appearance
+- disable or hide the linke during load
 - tell user about error
 - generate image of the fortune
 - show the image to user
+- fix concurrent modification error
+- close browser while loading, this shows error in log
 - check whether md to html can be used for fortunes
 - allow limited prompt modification, eg select style from drowdown
 - prevent repeated requests, eg allow single active request from a source with cooldown period
