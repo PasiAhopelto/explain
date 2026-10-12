@@ -4,6 +4,9 @@
     font-weight: 400;
     color: #40566b;
     margin-bottom: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .base-text {
@@ -25,5 +28,8 @@
 }
 
 .link {
+	background-color: transparent;
 	text-decoration: none;
+	border: 2px solid #40566b;
+	border-radius: 6px;
 }

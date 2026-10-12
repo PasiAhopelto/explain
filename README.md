@@ -32,8 +32,7 @@ This is self-written code with some advice from AI.
 
 # TODO
 
-- imporove link's appearance
-- disable or hide the linke during load
+- disable or hide the link during load
 - tell user about error
 - generate image of the fortune
 - show the image to user
