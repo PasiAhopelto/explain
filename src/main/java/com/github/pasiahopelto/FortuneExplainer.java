@@ -58,20 +58,21 @@ public class FortuneExplainer {
 				changed = true;
 			}
 			if (changed) {
-				send(emitter, fortune, thought, explanation);
+				send(emitter, fortune, thought, explanation, false);
 				changed = false;
 			}
 			Thread.sleep(1000L);
 		}
-		send(emitter, fortune, resultStreamer.getCompleteThinkingResponse(), resultStreamer.getCompleteResponse());
+		send(emitter, fortune, resultStreamer.getCompleteThinkingResponse(), resultStreamer.getCompleteResponse(), true);
 	}
 
-	private void send(SseEmitter emitter, String fortune, String thought, String explanation) {
+	private void send(SseEmitter emitter, String fortune, String thought, String explanation, boolean complete) {
 		try {
 			Context context = new Context();
 			context.setVariable("fortune", fortune);
 			context.setVariable("thought", markdownToHtml(thought));
 			context.setVariable("explanation", markdownToHtml(explanation));
+			context.setVariable("complete", complete);
 			String html = templateEngine.process("fortune", context);
 			emitter.send(SseEmitter.event().data(html));
 		} catch (IOException e) {

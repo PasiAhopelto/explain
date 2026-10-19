@@ -1,6 +1,8 @@
 # Explain a fortune
 
-Webapp that explains a fortune, and "of course it's a toy" for exploring local LLM use from Java and webapp implementation with htmx and Thymeleaf.
+Webapp that explains a fortune.
+
+"Of course it's a toy" for exploring local LLM use from Java and webapp implementation with htmx and Thymeleaf.
 
 Gets a fortune with fortune command and gives it to a local LLM for analysis. Shows fortune and explanation to user.
 
@@ -24,19 +26,21 @@ java -jar target/explain-fortune-<VERSION>.jar
 
 # Use
 
-Open http://localhost:8080/fortune
+Open http://localhost:8080
 
 # AI statement
 
-This is self-written code with some advice from AI.
+This is self-written code with advice from AI.
 
 # TODO
 
-- disable or hide the link during load
+- explanation style
+- thinking style
 - tell user about error
 - generate image of the fortune
 - show the image to user
 - fix concurrent modification error
+- prevent "cannot read next, because this.next is null" at FortuneExplainer.java:55
 - close browser while loading, this shows error in log
 - check whether md to html can be used for fortunes
 - allow limited prompt modification, eg select style from drowdown
