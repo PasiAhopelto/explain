@@ -34,8 +34,6 @@ This is self-written code with advice from AI.
 
 # TODO
 
-- explanation style
-- thinking style
 - tell user about error
 - generate image of the fortune
 - show the image to user
