@@ -34,8 +34,20 @@ public class FortuneExplainer {
         	readResult(emitter, prompt, fortune, ollama);
 		} catch (OllamaException e) {
 			log.error("error explaining a fortune", e);
+			sendError(emitter);
 		} catch (InterruptedException e) {
 			log.error("error sleeping", e);
+			sendError(emitter);
+		} catch (IOException e) {
+			log.error("emitter failure", e);
+		}
+	}
+
+	private void sendError(SseEmitter emitter) {
+		Context context = new Context();
+		String html = templateEngine.process("error", context);
+		try {
+			emitter.send(SseEmitter.event().data(html));
 		} catch (IOException e) {
 			log.error("emitter failure", e);
 		}
@@ -67,20 +79,25 @@ public class FortuneExplainer {
 	}
 
 	private void send(SseEmitter emitter, String fortune, String thought, String explanation, boolean complete) {
-		try {
-			Context context = new Context();
-			context.setVariable("fortune", fortune);
-			context.setVariable("thought", markdownToHtml(thought));
-			context.setVariable("explanation", markdownToHtml(explanation));
-			context.setVariable("complete", complete);
-			String html = templateEngine.process("fortune", context);
-			emitter.send(SseEmitter.event().data(html));
-		} catch (IOException e) {
-			log.error("send failed", e);
+		if (fortune == null || thought == null || explanation == null) {
+			sendError(emitter);
+		}
+		else {
+			try {
+				Context context = new Context();
+				context.setVariable("fortune", fortune);
+				context.setVariable("thought", markdownToHtml(thought, "thought", emitter));
+				context.setVariable("explanation", markdownToHtml(explanation, "explanation", emitter));
+				context.setVariable("complete", complete);
+				String html = templateEngine.process("fortune", context);
+				emitter.send(SseEmitter.event().data(html));
+			} catch (IOException e) {
+				log.error("send failed", e);
+			}
 		}
 	}
 	
-	private String markdownToHtml(String markdown) {
+	private String markdownToHtml(String markdown, String step, SseEmitter emitter) {
 		Parser parse = Parser.builder().build();
 		Node node = parse.parse(markdown);
 		HtmlRenderer renderer = HtmlRenderer.builder().build();
